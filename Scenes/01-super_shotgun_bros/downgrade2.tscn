@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbowy812qlh2y"]
+
+[ext_resource type="Texture2D" uid="uid://c1wsj8o7e0jir" path="res://resources/01-SSB/graphics/Pixel Platformer/MyTiles/Shotgun2.png" id="1_opxch"]
+[ext_resource type="Script" path="res://Scripts/1-SSB/downgrade.gd" id="2_ua5or"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_opxch")
+script = ExtResource("2_ua5or")

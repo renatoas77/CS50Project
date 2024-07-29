@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjp55pasi5pj8"]
+
+[ext_resource type="Script" path="res://Scripts/1-SSB/IntroSSB.gd" id="1_rk4h4"]
+[ext_resource type="Texture2D" uid="uid://bej2p3munlyht" path="res://resources/graphics/transition/Super Shotgun Bros.png" id="2_36umj"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rk4h4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_36umj")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

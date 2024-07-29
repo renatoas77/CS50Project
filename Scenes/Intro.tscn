@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://ck4b3thjrgdsb"]
+
+[ext_resource type="Script" path="res://Scripts/Intro.gd" id="1_fkjm6"]
+[ext_resource type="Texture2D" uid="uid://r02yuoxn0xf2" path="res://resources/graphics/transition/Opening.png" id="1_fols3"]
+
+[sub_resource type="Animation" id="Animation_r4ykh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_clbxb"]
+resource_name = "ScreenBlink"
+length = 1.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rxo6h"]
+_data = {
+"RESET": SubResource("Animation_r4ykh"),
+"ScreenBlink": SubResource("Animation_clbxb")
+}
+
+[node name="Intro" type="Node"]
+script = ExtResource("1_fkjm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fols3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rxo6h")
+}
+autoplay = "ScreenBlink"

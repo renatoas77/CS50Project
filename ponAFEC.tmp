@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb2yipol1lnig"]
+
+[ext_resource type="PackedScene" uid="uid://x7ndb31v34pe" path="res://Field.tscn" id="1_4htg3"]
+[ext_resource type="PackedScene" uid="uid://7blcbyvydyq6" path="res://player.tscn" id="2_b4ufu"]
+[ext_resource type="PackedScene" uid="uid://ba7fqu30015cx" path="res://ball.tscn" id="3_3k0q3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Field" parent="." instance=ExtResource("1_4htg3")]
+
+[node name="Player" parent="." instance=ExtResource("2_b4ufu")]
+position = Vector2(0, 400)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.975, 0.975)
+
+[node name="Ball" parent="." instance=ExtResource("3_3k0q3")]
+position = Vector2(0, 350)
+
+[connection signal="players_points" from="Field" to="Ball" method="_on_field_players_points"]

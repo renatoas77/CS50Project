@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://cejctoyt3uhca"]
+
+[ext_resource type="Script" path="res://Scripts/1-SSB/dead_body_impulse.gd" id="1_o5dub"]
+[ext_resource type="Texture2D" uid="uid://ceq3llut8qu4d" path="res://resources/01-SSB/graphics/Pixel Platformer/Tiles/Characters/standard_dead__0000.png" id="1_yu6u1"]
+[ext_resource type="Texture2D" uid="uid://dkp02ganymtmu" path="res://resources/01-SSB/graphics/Pixel Platformer/Tiles/Characters/standard_dead__0001.png" id="2_3jv87"]
+[ext_resource type="Texture2D" uid="uid://nkxeidktnjt2" path="res://resources/01-SSB/graphics/Pixel Platformer/Tiles/Characters/standard_dead__0002.png" id="3_yf45t"]
+[ext_resource type="Texture2D" uid="uid://dtjrdi7gbudx6" path="res://resources/01-SSB/graphics/Pixel Platformer/Tiles/Characters/standard_dead__0003.png" id="4_irlid"]
+[ext_resource type="AudioStream" uid="uid://cwitvqwskqj6v" path="res://resources/01-SSB/audio_effects/mixkit-video-game-blood-pop-2361.wav" id="6_dn7ro"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_chud7"]
+radius = 4.0
+height = 18.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1d56o"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k62nc"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_la41c"]
+radius = 3.0
+height = 10.0
+
+[node name="Node2D" type="Node2D"]
+z_index = -1
+script = ExtResource("1_o5dub")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-2.355, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-6, -3)
+shape = SubResource("CapsuleShape2D_chud7")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+texture = ExtResource("1_yu6u1")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(2.125, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(4, -5)
+shape = SubResource("CapsuleShape2D_1d56o")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+texture_filter = 1
+texture = ExtResource("2_3jv87")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(0, 3.55)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+position = Vector2(-4, 3)
+shape = SubResource("CapsuleShape2D_k62nc")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+texture_filter = 1
+texture = ExtResource("3_yf45t")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="."]
+position = Vector2(1.605, 1.545)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+position = Vector2(4, 6)
+shape = SubResource("CapsuleShape2D_la41c")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4"]
+texture_filter = 1
+texture = ExtResource("4_irlid")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dn7ro")
+volume_db = -10.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
