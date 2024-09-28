@@ -1,0 +1,8 @@
+SUPER SHOTGUN BROH
+Video Demo:  <URL HERE>
+Description:
+
+Introdução a Godot Engine
+
+Godot is a free, open source game engine, developed and maintained by the Godot Foundation, distributed under the MIT license, which means that in addition to being free, anyone can have access to the program's source code and make any changes they deem necessary. The Engine supports both 2d and 3d, supports the following languages: GDScript, C# and C++ and its projects can be exported to different platforms such as Windows, Linux, Android, etc.
+One of the most basic operating units in Godot are Nodes, Nodes are small components capable of performing different functions, there are several types of Nodes with different functions, such as showing an image, play a sound, detect collisions and various things commonly used in games. All Nodes have a name, editable properties, can be manipulated via code, and can and should be combined to achieve more complex behaviors. When several Nodes are combined we have what we call a Scene, and just like Nodes, Scenes can also be combined.We can for example combine the animation and collision Nodes to create a character that will be controlled via code, as the character is a combination of Nodes it is what can be called a Scene, we can also use the image collision and sound Nodes to create a scenario, which will also be a Scene and in the same way that we can combine Nodes to achieve more complex behaviors, we can combine Scenes, for example, the character Scene and the scenery scene, so we will have a character controlled by code that can move around the scene , or we can combine other Nodes to make a new scenario and combine this new scenario with the character already created, 

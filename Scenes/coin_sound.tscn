@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh0k5w5av26ss"]
+
+[ext_resource type="AudioStream" uid="uid://ca5q4ab6xq12o" path="res://resources/Sounds/PickupCoin.wav" id="1_xwcs0"]
+[ext_resource type="Script" path="res://Scripts/explosion.gd" id="2_r6bd1"]
+
+[node name="Coin" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_xwcs0")
+autoplay = true
+script = ExtResource("2_r6bd1")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

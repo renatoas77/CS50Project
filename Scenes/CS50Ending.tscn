@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo40r41yvqd3m"]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_feu7b"]
+[ext_resource type="Texture2D" uid="uid://cs8hhyvrspoy6" path="res://resources/graphics/transition/ThisWasCS50.png" id="2_637s4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_feu7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_637s4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch4orx2cx1kk0"]
+
+[ext_resource type="Script" path="res://Scripts/1-SSB/jumping_enemy.gd" id="1_k4l7e"]
+[ext_resource type="Texture2D" uid="uid://dccmqhludu6xg" path="res://resources/01-SSB/graphics/Pixel Platformer/Tiles/Characters/jumping_enemy_001.png" id="1_wn7dm"]
+[ext_resource type="Texture2D" uid="uid://bgjjd6b6agfqw" path="res://resources/01-SSB/graphics/Pixel Platformer/Tiles/Characters/jumping_enemy_002.png" id="2_sk4jb"]
+[ext_resource type="Texture2D" uid="uid://bqrrj3udco01o" path="res://resources/01-SSB/graphics/Pixel Platformer/Tiles/Characters/jumping_enemy_003.png" id="3_354ig"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0xhdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wn7dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sk4jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_354ig")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uia6p"]
+size = Vector2(10, 13)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_k4l7e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0xhdp")
+frame_progress = 0.132997
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_uia6p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

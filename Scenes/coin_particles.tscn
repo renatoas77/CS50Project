@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://b86ncfssb3864"]
+
+[ext_resource type="Script" path="res://Scripts/particles.gd" id="1_77ct6"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+z_index = 1
+emitting = false
+amount = 13
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.71
+randomness = 1.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+linear_accel_min = 320.0
+linear_accel_max = 540.0
+radial_accel_min = 320.0
+radial_accel_max = 540.0
+scale_amount_min = 0.0
+scale_amount_max = 5.0
+color = Color(0.862745, 0.858824, 0.360784, 1)
+script = ExtResource("1_77ct6")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
