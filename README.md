@@ -1,6 +1,6 @@
 SUPER SHOTGUN BROH
-Video Demo:  <URL HERE>
-Description:
+
+Video Demo: [Super Shotgun Broh](https://www.youtube.com/watch?v=Nvz6269tfv4)
 
 Introdução a Godot Engine
 
