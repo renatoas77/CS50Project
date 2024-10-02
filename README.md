@@ -1,8 +1,8 @@
-#SUPER SHOTGUN BROH
+# SUPER SHOTGUN BROH
 
 Video Demo: [Super Shotgun Broh](https://www.youtube.com/watch?v=Nvz6269tfv4)
 
-##Godot Engine Introduction
+## Godot Engine Introduction
 
 Godot is a free, open source game engine, developed and maintained by the Godot Foundation, distributed under the MIT license, which means that in addition to being free, anyone can have access to the program's source code and make any changes they deem necessary. The Engine supports both 2D and 3D, supports the following languages: GDScript, C# and C++ and its projects can be exported to different platforms such as Windows, Linux, Android, etc.  
 
